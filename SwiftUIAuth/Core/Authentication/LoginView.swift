@@ -28,6 +28,7 @@ struct LoginView: View {
                               title: "Email Address",
                               placeholder: "name@example.com")
                     
+                    
                     InputView(text: $password,
                               title: "Password",
                               placeholder: "Enter Your Password",
@@ -37,20 +38,38 @@ struct LoginView: View {
                 .padding(.top, 12)
                 
                 // SignIn Button
-                
-                Button {
-                    print("Log user in")
-                } label: {
-                    HStack {
-                        Text("SIGN IN")
-                            .fontWeight(.semibold)
-                        Image(systemName: "arrow.right")
+                    Button {
+                        print("Log user in")
+                    } label: {
+                        HStack {
+                            Spacer()
+                            Text("SIGN IN")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                            Image(systemName: "arrow.right")
+                                .foregroundColor(.white)
+                            Spacer()
+                        }
+                        .padding()
+                        .background(Color(.systemBlue))
+                        .cornerRadius(15)
+                        
                     }
-                    .foregroundColor(.white)
-                    frame(width: UIScreen)
-                }
+                    .frame(height: 48)
+                    .padding(.horizontal, 32)
+                    .padding(.top, 12)
+                
                 Spacer();
+                
                 // SignUp Button
+                
+                NavigationLink {
+                    
+                } label: {
+                    
+                }
+                
+                
             }
         }
     }
