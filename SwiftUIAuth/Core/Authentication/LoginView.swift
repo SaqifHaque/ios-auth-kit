@@ -23,11 +23,32 @@ struct LoginView: View {
                     
                 
                 // form fields
-                
+                VStack (spacing: 24) {
+                    InputView(text: $email,
+                              title: "Email Address",
+                              placeholder: "name@example.com")
+                    
+                    InputView(text: $password,
+                              title: "Password",
+                              placeholder: "Enter Your Password",
+                              isSecureField: true)
+                }
+                .padding(.horizontal)
+                .padding(.top, 12)
                 
                 // SignIn Button
                 
-                
+                Button {
+                    print("Log user in")
+                } label: {
+                    HStack {
+                        Text("SIGN IN")
+                            .fontWeight(.semibold)
+                        Image(systemName: "arrow.right")
+                    }
+                    .foregroundColor(.white)
+                    frame(width: UIScreen)
+                }
                 Spacer();
                 // SignUp Button
             }
