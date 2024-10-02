@@ -27,46 +27,55 @@ struct LoginView: View {
                     InputView(text: $email,
                               title: "Email Address",
                               placeholder: "name@example.com")
+                        .autocorrectionDisabled(true)
+                        .textInputAutocapitalization(.never)
+                        
                     
                     
                     InputView(text: $password,
                               title: "Password",
                               placeholder: "Enter Your Password",
                               isSecureField: true)
+                        .autocorrectionDisabled(true)
+                        .textInputAutocapitalization(.never)
                 }
                 .padding(.horizontal)
                 .padding(.top, 12)
                 
                 // SignIn Button
-                    Button {
-                        print("Log user in")
-                    } label: {
-                        HStack {
-                            Spacer()
-                            Text("SIGN IN")
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                            Image(systemName: "arrow.right")
-                                .foregroundColor(.white)
-                            Spacer()
-                        }
-                        .padding()
-                        .background(Color(.systemBlue))
-                        .cornerRadius(15)
-                        
+                Button {
+                    print("Log user in")
+                } label: {
+                    HStack {
+                        Text("SIGN IN")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                        Image(systemName: "arrow.right")
+                            .foregroundColor(.white)
+
                     }
-                    .frame(height: 48)
-                    .padding(.horizontal, 32)
-                    .padding(.top, 12)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                }
+                .background(Color(.systemBlue))
+                .cornerRadius(15)
+                .padding(.horizontal, 12)
+                .padding(.top, 12)
                 
                 Spacer();
                 
                 // SignUp Button
                 
                 NavigationLink {
-                    
+                    RegistrationView()
+                        .navigationBarBackButtonHidden(true)
                 } label: {
-                    
+                    HStack(spacing: 2) {
+                        Text("Don't have an account?")
+                        Text("Sign up")
+                            .fontWeight(.bold)
+                    }
+                    .font(.system(size: 14))
                 }
                 
                 
