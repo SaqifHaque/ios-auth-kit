@@ -35,6 +35,7 @@ struct RegistrationView: View {
             InputView(text: $fullname,
                       title: "Full Name",
                       placeholder: "Enter Your Name")
+                .autocorrectionDisabled(true)
             
             InputView(text: $password,
                       title: "Password",
